@@ -6,11 +6,14 @@ module.exports = {
             roboto: 'Roboto, sans-serif',
         },
         colors: {
+            black: '#121212',
+            white: 'white',
             'light-blue': 'hsl(214, 100%, 95%)',
             'dark-blue': 'hsl(209, 100%, 29%)',
             blue: 'hsl(209, 100%, 35%)',
             gray: 'rgb(209 213 219)',
-            pepsi: 'linear-gradient(to right, #b92b27, #1565c0);',
+            kimoby: '#0072ff',
+            newblue: '#00c6ff',
         },
         screens: {
             xs: '520px',

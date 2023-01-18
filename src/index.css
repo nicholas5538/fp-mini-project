@@ -4,20 +4,16 @@
 
 @layer base {
     * {
-        margin: 0;
-        padding: 0;
-        border: 0;
-        box-sizing: border-box;
+        @apply m-0 p-0 border-0 box-border;
     }
 
     html,
     body {
-        @apply font-roboto;
+        @apply font-roboto text-black;
     }
 
     #root {
-        padding: 0;
-        margin: 0;
+        @apply p-0 m-0 overflow-x-hidden;
     }
 
     h3 {
@@ -27,11 +23,23 @@
     hr.sidebar-hr {
         @apply block mx-auto bg-blue w-4/5 h-[1px];
     }
+
+    header {
+        @apply flex justify-end items-center gap-x-6 px-6 shadow-lg bg-gradient-to-l from-newblue to-kimoby h-16;
+    }
 }
 
 @layer components {
     .sidebar {
         @apply col-span-1 shadow-lg h-screen;
+    }
+
+    .sidebar-brand-container {
+        @apply grid grid-cols-1 place-items-center py-4;
+    }
+
+    .arrow {
+        @apply transition duration-300 ease-out;
     }
 
     .route-text {
@@ -40,5 +48,17 @@
 
     .route-link {
         @apply py-4 pl-8 flex justify-start items-center cursor-pointer ease-linear duration-150 hover:bg-light-blue hover:last:text-blue hover:first:fill-blue;
+    }
+
+    .header-profile {
+        @apply relative flex justify-between items-center gap-x-2 cursor-pointer;
+    }
+
+    .header-dropdown-menu {
+        @apply absolute top-11 right-[-24px] shadow-md bg-white transition duration-300;
+    }
+
+    .header-dropdown-text {
+        @apply ml-2 font-medium;
     }
 }
