@@ -10,7 +10,8 @@ module.exports = {
             'dark-blue': 'hsl(209, 100%, 29%)',
             blue: 'hsl(209, 100%, 35%)',
             gray: 'rgb(209 213 219)',
-            pepsi: 'linear-gradient(to right, #b92b27, #1565c0);',
+            evening: '#b92b27',
+            sunshine: '#1565c0',
         },
         screens: {
             xs: '520px',

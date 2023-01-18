@@ -34,6 +34,10 @@
         @apply col-span-1 shadow-lg h-screen;
     }
 
+    .sidebar-brand-container {
+        @apply grid grid-cols-1 place-items-center py-4;
+    }
+
     .route-text {
         @apply hidden md:block ml-2 font-medium;
     }
