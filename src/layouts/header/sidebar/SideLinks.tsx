@@ -48,7 +48,7 @@ const SideLinks = () => {
                         {element.svg}
                         <span className='route-text'>{element.text}</span>
                         <Arrow
-                            className={`ml-2 ease-linear duration-200 ${
+                            className={`arrow ml-2 ${
                                 !isHidden ? 'rotate-180' : 'rotate-0'
                             }`}
                         />
