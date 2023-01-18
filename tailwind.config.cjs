@@ -2,21 +2,23 @@
 module.exports = {
     content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
     theme: {
+        fontFamily: {
+            roboto: 'Roboto, sans-serif',
+        },
+        colors: {
+            'light-blue': 'hsl(214, 100%, 95%)',
+            'dark-blue': 'hsl(209, 100%, 29%)',
+            blue: 'hsl(209, 100%, 35%)',
+            gray: 'rgb(209 213 219)',
+            pepsi: 'linear-gradient(to right, #b92b27, #1565c0);',
+        },
         screens: {
+            xs: '520px',
             sm: '640px',
-            // => @media (min-width: 640px) { ... }
-
             md: '768px',
-            // => @media (min-width: 768px) { ... }
-
             lg: '992px',
-            // => @media (min-width: 1024px) { ... }
-
             xl: '1280px',
-            // => @media (min-width: 1280px) { ... }
-
             '2xl': '1536px',
-            // => @media (min-width: 1536px) { ... }
         },
         extend: {},
     },

@@ -1,3 +1,44 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+    * {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        box-sizing: border-box;
+    }
+
+    html,
+    body {
+        @apply font-roboto;
+    }
+
+    #root {
+        padding: 0;
+        margin: 0;
+    }
+
+    h3 {
+        @apply text-sm sm:text-lg md:text-xl text-dark-blue font-medium tracking-widest;
+    }
+
+    hr.sidebar-hr {
+        @apply block mx-auto bg-blue w-4/5 h-[1px];
+    }
+}
+
+@layer components {
+    .sidebar {
+        @apply col-span-1 shadow-lg h-screen;
+    }
+
+    .route-text {
+        @apply hidden md:block ml-2 font-medium;
+    }
+
+    .route-link {
+        @apply py-4 pl-8 flex justify-start items-center cursor-pointer ease-linear duration-150 hover:bg-light-blue hover:last:text-blue hover:first:fill-blue;
+    }
+}
