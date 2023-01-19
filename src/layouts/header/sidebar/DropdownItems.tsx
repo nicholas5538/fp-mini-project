@@ -1,5 +1,5 @@
 import React, { useId } from 'react';
-import { dropdownObj } from './listObj';
+import { dropdownObj } from '../../../constants/listObj';
 
 type hiddenStatus = {
     isHidden: boolean;

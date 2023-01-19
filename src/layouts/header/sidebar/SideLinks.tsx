@@ -1,5 +1,5 @@
 import React, { MouseEventHandler, useState, useId } from 'react';
-import { sidebarObj } from './listObj';
+import { sidebarObj } from '../../../constants/listObj';
 import { ReactComponent as Arrow } from '../../../assets/arrow.svg';
 import DropdownItems from './DropdownItems';
 import { NavLink } from 'react-router-dom';
