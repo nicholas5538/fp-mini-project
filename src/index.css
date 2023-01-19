@@ -16,6 +16,14 @@
         @apply p-0 m-0 overflow-x-hidden;
     }
 
+    h1 {
+        @apply text-4xl text-black font-extrabold tracking-widest;
+    }
+
+    h2 {
+        @apply text-3xl text-black font-semibold tracking-widest;
+    }
+
     h3 {
         @apply text-sm sm:text-lg md:text-xl text-dark-blue font-medium tracking-widest;
     }
@@ -25,7 +33,7 @@
     }
 
     header {
-        @apply flex justify-end items-center gap-x-6 px-6 shadow-lg bg-gradient-to-l from-newblue to-kimoby h-16;
+        @apply relative z-0 flex justify-end items-center gap-x-6 px-6 shadow-md bg-gradient-to-l from-newblue to-kimoby h-16;
     }
 }
 
@@ -50,15 +58,27 @@
         @apply py-4 pl-8 flex justify-start items-center cursor-pointer ease-linear duration-150 hover:bg-light-blue hover:last:text-blue hover:first:fill-blue;
     }
 
+    .route-link-active {
+        @apply py-4 pl-8 flex justify-start items-center cursor-pointer bg-light-blue last:text-blue first:fill-blue;
+    }
+
     .header-profile {
-        @apply relative flex justify-between items-center gap-x-2 cursor-pointer;
+        @apply flex justify-between items-center gap-x-2 cursor-pointer;
     }
 
     .header-dropdown-menu {
-        @apply absolute top-11 right-[-24px] shadow-md bg-white transition duration-300;
+        @apply absolute z-10 top-16 right-0 shadow-md bg-white transition duration-300;
     }
 
     .header-dropdown-text {
         @apply ml-2 font-medium;
+    }
+
+    .centered-error-container {
+        @apply grid grid-cols-1 place-items-center bg-gradient-to-l from-evening to-sunshine h-screen w-screen;
+    }
+
+    .error-container {
+        @apply relative grid grid-cols-1 place-items-center gap-y-4 pt-16 pb-12 px-16 bg-white rounded-3xl w-11/12 max-w-sm sm:w-2/3;
     }
 }
