@@ -20,6 +20,7 @@ const SideLinks = () => {
                     className={({ isActive }) =>
                         isActive ? 'route-link-active' : 'route-link'
                     }
+                    end
                 >
                     <obj.svgElement className='md:hidden lg:block' />
                     <span className='route-text'>{obj.text}</span>

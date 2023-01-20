@@ -7,7 +7,7 @@ import { Player, Controls } from '@lottiefiles/react-lottie-player';
 const ErrorBoundary = () => {
     const error = useRouteError();
 
-    if (isRouteErrorResponse(error)) {
+    if (isRouteErrorResponse(error))
         return (
             <div className='centered-error-container'>
                 <div className='error-container'>
@@ -26,26 +26,17 @@ const ErrorBoundary = () => {
                     </Player>
                     <p className='lg:text-xl'>Something went wrong</p>
                     {error.data?.message && <p>{error.data.message}</p>}
-                    <p className='lg:text-xl'>
-                        Click&nbsp;
-                        <Link
-                            to='/'
-                            className='text-blue font-semibold hover:underline hover:underline-offset-4'
-                        >
-                            here
-                        </Link>
-                        &nbsp;to home page
-                    </p>
+                    <Link to='/' className='button'>
+                        Back to homepage
+                    </Link>
                 </div>
             </div>
         );
-    } else {
-        return (
-            <div>
-                <h1>Oops!</h1>
-            </div>
-        );
-    }
+    return (
+        <div>
+            <h1>Oops!</h1>
+        </div>
+    );
 };
 
 export default ErrorBoundary;

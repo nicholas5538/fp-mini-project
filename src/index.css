@@ -81,4 +81,8 @@
     .error-container {
         @apply relative grid grid-cols-1 place-items-center gap-y-4 pt-16 pb-12 px-16 bg-white rounded-3xl w-11/12 max-w-sm sm:w-2/3;
     }
+
+    .button {
+        @apply p-4 rounded-xl bg-blue-button hover:bg-blue-button-hover;
+    }
 }

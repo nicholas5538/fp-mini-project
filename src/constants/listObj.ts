@@ -6,10 +6,6 @@ import { ReactComponent as Department } from '../assets/department.svg';
 import { ReactComponent as Employee } from '../assets/employee.svg';
 import { ReactComponent as Location } from '../assets/location.svg';
 
-type path = {
-    path: string;
-};
-
 type listElements = {
     svgElement: React.FunctionComponent<
         React.SVGProps<SVGSVGElement> & {
@@ -17,9 +13,10 @@ type listElements = {
         }
     >;
     text: string;
+    path: string;
 };
 
-export const sidebarObj: (listElements & path)[] = [
+export const sidebarObj: listElements[] = [
     {
         svgElement: Dashboard,
         text: 'Dashboard',
@@ -33,12 +30,12 @@ export const sidebarObj: (listElements & path)[] = [
     {
         svgElement: Project,
         text: 'Projects',
-        path: '/',
+        path: 'projects',
     },
     {
         svgElement: Settings,
         text: 'Settings',
-        path: '/',
+        path: 'settings',
     },
 ];
 
@@ -46,13 +43,16 @@ export const dropdownObj: listElements[] = [
     {
         svgElement: Department,
         text: 'Departments',
+        path: 'departments',
     },
     {
         svgElement: Employee,
         text: 'Employees',
+        path: 'employees',
     },
     {
         svgElement: Location,
         text: 'Locations',
+        path: 'locations',
     },
 ];
