@@ -9,7 +9,7 @@
 
     html,
     body {
-        @apply font-roboto text-black;
+        @apply font-roboto text-black h-full;
     }
 
     #root {
@@ -35,11 +35,15 @@
     header {
         @apply relative z-0 flex justify-end items-center gap-x-6 px-6 shadow-md bg-gradient-to-l from-newblue to-kimoby h-16;
     }
+
+    main {
+        @apply px-10 py-4 grid grid-cols-2 gap-y-2 place-items-center mx-auto max-w-3xl h-[calc(100vh-4rem)];
+    }
 }
 
 @layer components {
     .sidebar {
-        @apply col-span-1 shadow-lg h-screen;
+        @apply col-span-1 shadow-lg h-full;
     }
 
     .sidebar-brand-container {
