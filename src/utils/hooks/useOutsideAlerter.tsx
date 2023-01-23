@@ -8,10 +8,7 @@ type eventFunction = (
 const useOutsideAlerter: eventFunction = (ref, setState) => {
     useEffect(() => {
         const handleClickOutside = (e: MouseEvent): void => {
-            if (
-                ref.current &&
-                !ref.current.contains(e.target as HTMLDivElement)
-            ) {
+            if (ref.current && !ref.current.contains(e.target as HTMLElement)) {
                 setState(false);
             }
         };
