@@ -1,5 +1,5 @@
 import React, { useId } from 'react';
-import Main from '../layouts/main/Main';
+import Main from '../layouts/Main';
 import SkeletonCard from '../components/SkeletonCard';
 
 const Dashboard = () => {
