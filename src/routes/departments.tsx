@@ -1,5 +1,6 @@
 import React, { MouseEventHandler, useState } from 'react';
 import Modal from '../components/departmentModal';
+import { Transition } from '@headlessui/react';
 import { Player, Controls } from '@lottiefiles/react-lottie-player';
 import { ReactComponent as Update } from '../assets/update.svg';
 import { ReactComponent as Delete } from '../assets/delete.svg';
@@ -89,7 +90,18 @@ const Departments = () => {
                     </table>
                 </div>
             </section>
-            {modalClicked && <Modal {...modalProps} />}
+            <Transition
+                appear={true}
+                show={modalClicked}
+                enter='transition-opacity duration-300'
+                enterFrom='opacity-0'
+                enterTo='opacity-100'
+                leave='transition-opacity duration-300'
+                leaveFrom='opacity-100'
+                leaveTo='opacity-0'
+            >
+                <Modal {...modalProps} />
+            </Transition>
         </>
     );
 };

@@ -1,26 +1,25 @@
-import React, { useRef } from 'react';
+import React, { useRef, useEffect } from 'react';
 import { Form } from 'react-router-dom';
 import useOutsideAlerter from '../utils/hooks/useOutsideAlerter';
 
 type modalEvent = {
-    modalClicked: boolean;
     setModalStatus: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
-const Modal = ({ modalClicked, setModalStatus }: modalEvent) => {
+const Modal = ({ setModalStatus }: modalEvent) => {
     const modalRef = useRef<HTMLDivElement>(null);
+    const idRef = useRef<HTMLInputElement>(null);
     useOutsideAlerter(modalRef, setModalStatus);
+    useEffect(() => {
+        idRef.current?.focus();
+    }, []);
 
     return (
         <div className='absolute top-0 left-0 flex justify-center items-center w-full h-full'>
             <div className='bg-black opacity-50 h-full w-full'></div>
             <div
                 ref={modalRef}
-                className={`absolute p-4 mx-auto bg-white rounded-2xl shadow-xl max-w-lg w-5/6 ease-out transition duration-300 ${
-                    modalClicked === false
-                        ? '-translate-y-[40rem]'
-                        : 'translate-y-0'
-                }`}
+                className='absolute p-4 mx-auto bg-white rounded-2xl shadow-xl max-w-lg w-5/6 ease-out transition duration-300'
             >
                 <Form method='post' action='/departments'>
                     <h3 className='text-black text-2xl font-bold border-b mb-6 tracking-widest'>
@@ -34,6 +33,7 @@ const Modal = ({ modalClicked, setModalStatus }: modalEvent) => {
                             Department ID:
                         </label>
                         <input
+                            ref={idRef}
                             type='number'
                             placeholder='Enter any number'
                             name='department-id'
