@@ -65,7 +65,7 @@ const Modal = ({ modalClicked, setModalStatus }: modalEvent) => {
                         </button>
                         <button
                             type='button'
-                            className='button py-2 bg-red hover:bg-dark-red'
+                            className='button py-2 bg-orange-red hover:bg-dark-red'
                             onClick={() =>
                                 setModalStatus((prevStatus) => !prevStatus)
                             }
