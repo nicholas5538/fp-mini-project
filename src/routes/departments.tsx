@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { MouseEventHandler, useState } from 'react';
 import Modal from '../components/departmentModal';
 import { Player, Controls } from '@lottiefiles/react-lottie-player';
 import { ReactComponent as Update } from '../assets/update.svg';
@@ -6,12 +6,20 @@ import { ReactComponent as Delete } from '../assets/delete.svg';
 import { mockDepartments } from '../constants/mockData';
 
 const Departments = () => {
+    const [modalClicked, setModalStatus] = useState<boolean>(false);
+    const modalProps = { modalClicked, setModalStatus };
+
     const updateIcon = (
         <Update className='cursor-pointer ease-linear transition-all duration-150 hover:scale-110' />
     );
     const deleteIcon = (
         <Delete className='cursor-pointer ease-linear transition-all duration-150 hover:scale-110 hover:fill-sunshine' />
     );
+
+    const modalEventHandler: MouseEventHandler<HTMLButtonElement> = (e) => {
+        e.stopPropagation();
+        setModalStatus((prevStatus) => !prevStatus);
+    };
 
     const tdElements = mockDepartments.map(({ id, department }) => {
         return (
@@ -38,7 +46,11 @@ const Departments = () => {
                             Sort your employees and group them by departments
                         </h3>
                     </div>
-                    <button className='button w-1/3 lg:h-1/2'>
+                    <button
+                        type='button'
+                        className='button text-center w-1/3 lg:h-1/2 cursor-pointer'
+                        onClick={modalEventHandler}
+                    >
                         Add Departments
                     </button>
                 </div>
@@ -77,7 +89,7 @@ const Departments = () => {
                     </table>
                 </div>
             </section>
-            <Modal />
+            {modalClicked && <Modal {...modalProps} />}
         </>
     );
 };
