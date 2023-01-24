@@ -17,6 +17,8 @@ module.exports = {
             kimoby: '#0072ff',
             newblue: '#00c6ff',
             sunshine: '#b92b27',
+            red: '#F61509',
+            'dark-red': '#DC2331',
             evening: '#1565C0',
         },
         screens: {
