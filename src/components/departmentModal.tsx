@@ -36,6 +36,7 @@ const Modal = ({ modalClicked, setModalStatus }: modalEvent) => {
                         <input
                             type='number'
                             placeholder='Enter any number'
+                            name='department-id'
                             className='department-id border p-2 rounded-lg w-5/6'
                         />
                     </div>
@@ -48,6 +49,7 @@ const Modal = ({ modalClicked, setModalStatus }: modalEvent) => {
                         </label>
                         <input
                             type='text'
+                            name='department'
                             placeholder='Enter any department name'
                             className='department border p-2 rounded-lg w-5/6'
                         />
