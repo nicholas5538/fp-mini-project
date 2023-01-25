@@ -6,7 +6,7 @@ const Dashboard = () => {
     const skeletonSizes = ['small', 'small', 'small', 'small', 'large'];
 
     return (
-        <Main>
+        <Main className='dashboard-container'>
             <div className='col-span-2 justify-self-start'>
                 <h2>Dashboard</h2>
                 <h3>Welcome to Pepsi&apos;s corporate page</h3>
