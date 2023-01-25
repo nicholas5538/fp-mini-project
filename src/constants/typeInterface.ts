@@ -6,6 +6,10 @@ type modalState = {
     modalClicked: boolean;
 };
 
+export type childrenNode = {
+    children: JSX.Element | JSX.Element[] | string | string[];
+};
+
 export type routing = {
     path: string;
 };

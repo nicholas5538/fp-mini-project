@@ -33,8 +33,21 @@ const ErrorBoundary = () => {
             </div>
         );
     return (
-        <div>
-            <h1>Oops!</h1>
+        <div className='flex justify-center items-center py-12 w-full'>
+            <div className='error-container pt-2 border border-blue shadow-lg'>
+                <Player
+                    autoplay
+                    loop
+                    src='https://assets2.lottiefiles.com/temp/lf20_QYm9j9.json'
+                    style={{ height: '15.625em', width: '15.625em' }}
+                >
+                    <Controls visible={false} />
+                </Player>
+                <p className='lg:text-xl'>Something went wrong</p>
+                <Link to='/' className='button'>
+                    Back to homepage
+                </Link>
+            </div>
         </div>
     );
 };

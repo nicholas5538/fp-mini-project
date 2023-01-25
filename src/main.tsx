@@ -11,9 +11,6 @@ import ErrorBoundary from './routes/error';
 import Dashboard from './routes/dashboard';
 import Departments from './routes/departments';
 import Employees from './routes/employees';
-import Locations from './routes/locations';
-import Projects from './routes/projects';
-import Settings from './routes/settings';
 import './index.css';
 
 const router = createBrowserRouter(
@@ -23,9 +20,9 @@ const router = createBrowserRouter(
                 <Route index element={<Dashboard />} />
                 <Route path='departments' element={<Departments />} />
                 <Route path='employees' element={<Employees />} />
-                <Route path='locations' element={<Locations />} />
-                <Route path='projects' element={<Projects />} />
-                <Route path='settings' element={<Settings />} />
+                <Route path='locations' element={<ErrorBoundary />} />
+                <Route path='projects' element={<ErrorBoundary />} />
+                <Route path='settings' element={<ErrorBoundary />} />
             </Route>
         </Route>
     )
