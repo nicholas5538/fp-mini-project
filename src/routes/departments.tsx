@@ -1,13 +1,12 @@
 import React, { MouseEventHandler, useState } from 'react';
 import Main from '../layouts/Main';
-import Modal from '../components/departmentModal';
-import { DepartmentTable } from '../components/tables';
-import { Transition } from '@headlessui/react';
-import { Player, Controls } from '@lottiefiles/react-lottie-player';
+import TableSearch from '../components/Table/TableSearch';
+import Modal from '../components/Modal/Modal';
+import { DepartmentTable } from '../components/Table/tables';
 
 const Departments = () => {
     const [modalClicked, setModalStatus] = useState<boolean>(false);
-    const modalProps = { modalClicked, setModalStatus };
+    const modalProps = { path: 'departments', modalClicked, setModalStatus };
 
     const modalEventHandler: MouseEventHandler<HTMLButtonElement> = (e) => {
         e.stopPropagation();
@@ -32,42 +31,10 @@ const Departments = () => {
                         Add Departments
                     </button>
                 </div>
-                <div className='items-center md:flex md:flex-row md:justify-evenly lg:w-full lg:justify-between lg:mb-4'>
-                    <div className='grid grid-cols-4 mb-4 md:grid-cols-1 md:mb-0'>
-                        <label className='label col-span-2 md:col-span-1'>
-                            <span className='label-text'>
-                                Search for any department:
-                            </span>
-                        </label>
-                        <input
-                            type='text'
-                            placeholder='Department Name'
-                            className='input input-bordered w-full col-span-2 max-w-sm'
-                        />
-                    </div>
-                    <Player
-                        autoplay
-                        loop
-                        src='https://assets6.lottiefiles.com/private_files/lf30_lwubnwbl.json'
-                        className='hidden h-[12em] w-full md:block md:justify-self-end lg:h-[20em]'
-                    >
-                        <Controls visible={false} />
-                    </Player>
-                </div>
+                <TableSearch path={modalProps.path} />
                 <DepartmentTable />
             </Main>
-            <Transition
-                appear={true}
-                show={modalClicked}
-                enter='transition-opacity duration-300'
-                enterFrom='opacity-0'
-                enterTo='opacity-100'
-                leave='transition-opacity duration-300'
-                leaveFrom='opacity-100'
-                leaveTo='opacity-0'
-            >
-                <Modal {...modalProps} />
-            </Transition>
+            <Modal {...modalProps} />
         </>
     );
 };

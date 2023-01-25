@@ -1,7 +1,7 @@
 import React from 'react';
-import { mockDepartments, mockEmployees } from '../constants/mockData';
-import { ReactComponent as Update } from '../assets/update.svg';
-import { ReactComponent as Delete } from '../assets/delete.svg';
+import { mockDepartments, mockEmployees } from '../../constants/mockData';
+import { ReactComponent as Update } from '../../assets/update.svg';
+import { ReactComponent as Delete } from '../../assets/delete.svg';
 
 export const updateIcon = (
     <Update className='cursor-pointer ease-linear transition-all duration-150 hover:scale-110' />
