@@ -29,7 +29,12 @@ module.exports = {
             xl: '1280px',
             '2xl': '1536px',
         },
-        extend: {},
+        extend: {
+            boxShadow: {
+                sidebar: '1.95px 0 2.6px rgba(0, 0, 0, 0.15)',
+                footer: '0 -1.95px 2.6px rgba(0, 0, 0, 0.15)',
+            },
+        },
     },
     plugins: [require('daisyui')],
     daisyui: {
