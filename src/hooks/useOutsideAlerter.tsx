@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 
 type eventFunction = (
     ref: React.RefObject<HTMLDivElement>,

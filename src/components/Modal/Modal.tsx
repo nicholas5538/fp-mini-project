@@ -1,12 +1,7 @@
 import React from 'react';
 import { Transition } from '@headlessui/react';
+import { modalProps } from '../../constants/typeInterface';
 import ModalForm from './ModalForm';
-
-type modalProps = {
-    path: string;
-    modalClicked: boolean;
-    setModalStatus: React.Dispatch<React.SetStateAction<boolean>>;
-};
 
 const Modal = ({ path, modalClicked, setModalStatus }: modalProps) => {
     return (
