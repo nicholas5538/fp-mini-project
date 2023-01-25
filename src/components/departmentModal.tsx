@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from 'react';
 import { Form } from 'react-router-dom';
-import useOutsideAlerter from '../utils/hooks/useOutsideAlerter';
+import useOutsideAlerter from '../hooks/useOutsideAlerter';
 
 type modalEvent = {
     setModalStatus: React.Dispatch<React.SetStateAction<boolean>>;

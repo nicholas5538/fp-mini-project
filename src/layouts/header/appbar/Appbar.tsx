@@ -1,7 +1,7 @@
 import React, { MouseEventHandler, useRef, useState } from 'react';
 import { ReactComponent as Notification } from '../../../assets/notification.svg';
 import DropdownMenu from './DropdownMenu';
-import useOutsideAlerter from '../../../utils/hooks/useOutsideAlerter';
+import useOutsideAlerter from '../../../hooks/useOutsideAlerter';
 
 const AppBar = () => {
     const [isDrop, setDropStatus] = useState<boolean>(false);
