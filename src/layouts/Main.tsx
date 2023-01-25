@@ -1,12 +1,17 @@
 import React from 'react';
+import AnimatedPage from '../components/AnimatedPage';
+import { childrenNode } from '../constants/typeInterface';
 
-type childrenNode = {
-    children: React.ReactNode;
+type props = {
     className?: string;
-};
+} & childrenNode;
 
-const Main = (props: childrenNode) => {
-    return <main className={props.className}>{props.children}</main>;
+const Main = (props: props) => {
+    return (
+        <AnimatedPage>
+            <main className={props.className}>{props.children}</main>
+        </AnimatedPage>
+    );
 };
 
 export default Main;
