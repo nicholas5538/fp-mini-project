@@ -1,11 +1,7 @@
 import React, { MouseEvent, useRef, useEffect } from 'react';
 import { Form } from 'react-router-dom';
+import { modalEvent } from '../../constants/typeInterface';
 import useOutsideAlerter from '../../hooks/useOutsideAlerter';
-
-type modalEvent = {
-    path: string;
-    setModalStatus: React.Dispatch<React.SetStateAction<boolean>>;
-};
 
 const ModalForm = ({ path, setModalStatus }: modalEvent) => {
     const modalRef = useRef<HTMLDivElement>(null);
