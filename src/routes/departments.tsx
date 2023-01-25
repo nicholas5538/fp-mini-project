@@ -1,45 +1,22 @@
 import React, { MouseEventHandler, useState } from 'react';
+import Main from '../layouts/Main';
 import Modal from '../components/departmentModal';
+import { DepartmentTable } from '../components/tables';
 import { Transition } from '@headlessui/react';
 import { Player, Controls } from '@lottiefiles/react-lottie-player';
-import { ReactComponent as Update } from '../assets/update.svg';
-import { ReactComponent as Delete } from '../assets/delete.svg';
-import { mockDepartments } from '../constants/mockData';
 
 const Departments = () => {
     const [modalClicked, setModalStatus] = useState<boolean>(false);
     const modalProps = { modalClicked, setModalStatus };
-
-    const updateIcon = (
-        <Update className='cursor-pointer ease-linear transition-all duration-150 hover:scale-110' />
-    );
-    const deleteIcon = (
-        <Delete className='cursor-pointer ease-linear transition-all duration-150 hover:scale-110 hover:fill-sunshine' />
-    );
 
     const modalEventHandler: MouseEventHandler<HTMLButtonElement> = (e) => {
         e.stopPropagation();
         setModalStatus((prevStatus) => !prevStatus);
     };
 
-    const tdElements = mockDepartments.map(({ id, department }) => {
-        return (
-            <tr key={id}>
-                <th>{id}</th>
-                <td>{department}</td>
-                <td>
-                    <div className='flex flex-row justify-center items-center gap-x-1.5'>
-                        {updateIcon}
-                        {deleteIcon}
-                    </div>
-                </td>
-            </tr>
-        );
-    });
-
     return (
         <>
-            <section className='py-4 px-6 flex flex-col justify-between items-start max-w-3xl lg:w-2/3 lg:mx-auto'>
+            <Main className='outlet-container'>
                 <div className='flex flex-col mb-4 lg:flex-row lg:justify-between lg:items-center lg:mb-0'>
                     <div className='mb-2 lg:mb-0'>
                         <h2>Departments</h2>
@@ -77,19 +54,8 @@ const Departments = () => {
                         <Controls visible={false} />
                     </Player>
                 </div>
-                <div className='overflow-x-hidden overflow-y-scroll lg:w-full'>
-                    <table className='table-normal border-2 border-dark-blue w-full'>
-                        <thead className='border border-dark-blue'>
-                            <tr>
-                                <th>Department ID</th>
-                                <th>Department</th>
-                                <th>Actions</th>
-                            </tr>
-                        </thead>
-                        <tbody>{tdElements}</tbody>
-                    </table>
-                </div>
-            </section>
+                <DepartmentTable />
+            </Main>
             <Transition
                 appear={true}
                 show={modalClicked}
