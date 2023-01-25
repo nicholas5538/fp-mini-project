@@ -26,7 +26,7 @@ export const DepartmentTable = () => {
         );
     });
     return (
-        <div className='overflow-x-hidden overflow-y-scroll lg:w-full'>
+        <div className='overflow-auto w-full'>
             <table className='table-normal border-2 border-dark-blue w-full'>
                 <thead className='border border-dark-blue'>
                     <tr>
@@ -62,7 +62,7 @@ export const EmployeeTable = () => {
     );
 
     return (
-        <div className='overflow-x-hidden overflow-y-scroll lg:w-full'>
+        <div className='overflow-auto w-full'>
             <table className='table-normal border-2 border-dark-blue w-full'>
                 <thead className='border border-dark-blue'>
                     <tr>

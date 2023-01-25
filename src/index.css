@@ -33,17 +33,21 @@
     }
 
     header {
-        @apply relative z-0 row-span-1 flex justify-end items-center gap-x-6 px-6 shadow-md bg-gradient-to-l from-newblue to-kimoby h-16;
+        @apply relative z-0 row-span-1 flex justify-end items-center gap-x-6 px-6 bg-gradient-to-l from-newblue to-kimoby h-16;
     }
 
     td {
         @apply text-center;
     }
+
+    a {
+        @apply mr-4 text-base tracking-wider hover:text-blue hover:underline hover:underline-offset-8 hover:decoration-blue lg:tracking-widest;
+    }
 }
 
 @layer components {
     .sidebar {
-        @apply col-span-1 shadow-lg h-full;
+        @apply col-span-1 shadow-sidebar h-full;
     }
 
     .sidebar-brand-container {
@@ -95,6 +99,10 @@
     }
 
     .outlet-container {
-        @apply py-4 px-6 flex flex-col justify-between items-start max-w-3xl lg:w-2/3 lg:mx-auto;
+        @apply p-6 flex flex-col justify-between items-start max-w-3xl lg:w-2/3 lg:mx-auto;
+    }
+
+    .footer-container {
+        @apply flex flex-col items-start justify-between px-4 py-6 shadow-footer w-screen h-full md:flex-row md:items-center;
     }
 }

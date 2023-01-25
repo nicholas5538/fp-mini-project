@@ -17,7 +17,7 @@ const Departments = () => {
         <>
             <Main className='outlet-container'>
                 <div className='flex flex-col mb-4 lg:flex-row lg:justify-between lg:items-center lg:mb-0'>
-                    <div className='mb-2 lg:mb-0'>
+                    <div className='mb-2 lg:mb-0 lg:mr-4'>
                         <h2>Departments</h2>
                         <h3>
                             Sort your employees and group them by departments
