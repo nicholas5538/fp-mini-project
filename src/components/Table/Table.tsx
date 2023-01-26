@@ -3,21 +3,30 @@ import { mockDepartments, mockEmployees } from '../../constants/mockData';
 import { ReactComponent as Update } from '../../assets/update.svg';
 import { ReactComponent as Delete } from '../../assets/delete.svg';
 
-export const updateIcon = (
-    <Update className='cursor-pointer ease-linear transition-all duration-150 hover:scale-110' />
+const updateIcon = (
+    <Update
+        className='cursor-pointer ease-linear transition-all duration-150 hover:scale-110'
+        data-testid='update-icon'
+    />
 );
-export const deleteIcon = (
-    <Delete className='cursor-pointer ease-linear transition-all duration-150 hover:scale-110 hover:fill-sunshine' />
+const deleteIcon = (
+    <Delete
+        className='cursor-pointer ease-linear transition-all duration-150 hover:scale-110 hover:fill-sunshine'
+        data-testid='delete-icon'
+    />
 );
 
 export const DepartmentTable = () => {
-    const tdDepartments = mockDepartments.map(({ id, department }) => {
+    const tdDepartments = mockDepartments.map(({ id, department }, index) => {
         return (
             <tr key={id}>
                 <th>{id}</th>
                 <td>{department}</td>
-                <td>
-                    <div className='flex flex-row justify-center items-center gap-x-1.5'>
+                <td data-testid={`action-column ${index + 1}`}>
+                    <div
+                        className='flex flex-row justify-center items-center gap-x-1.5'
+                        data-testid={`action-icons ${index + 1}`}
+                    >
                         {updateIcon}
                         {deleteIcon}
                     </div>
