@@ -3,6 +3,7 @@ import { Outlet } from 'react-router-dom';
 import Sidebar from '../layouts/header/sidebar/Sidebar';
 import AppBar from '../layouts/header/appbar/Appbar';
 import Footer from '../layouts/Footer';
+import { ModalProvider } from '../hooks/useModalContext';
 
 const Root = () => {
     return (
@@ -11,7 +12,9 @@ const Root = () => {
             <div className='col-span-5'>
                 <AppBar />
                 <div>
-                    <Outlet />
+                    <ModalProvider>
+                        <Outlet />
+                    </ModalProvider>
                 </div>
             </div>
             <Footer />

@@ -1,17 +1,14 @@
-import React, { MouseEventHandler, useState } from 'react';
+import React from 'react';
 import Main from '../layouts/Main';
 import TableSearch from '../components/Table/TableSearch';
 import Modal from '../components/Modal/Modal';
 import { EmployeeTable } from '../components/Table/tables';
+import { useModalContext } from '../hooks/useModalContext';
 
 const Employees = () => {
-    const [modalClicked, setModalStatus] = useState<boolean>(false);
+    const { modalClicked, setModalStatus, modalEventHandler } =
+        useModalContext();
     const modalProps = { path: 'employees', modalClicked, setModalStatus };
-
-    const modalEventHandler: MouseEventHandler<HTMLButtonElement> = (e) => {
-        e.stopPropagation();
-        setModalStatus((prevStatus) => !prevStatus);
-    };
 
     return (
         <>
