@@ -2,7 +2,7 @@ import React from 'react';
 import Main from '../layouts/Main';
 import TableSearch from '../components/Table/TableSearch';
 import Modal from '../components/Modal/Modal';
-import { EmployeeTable } from '../components/Table/tables';
+import { EmployeeTable } from '../components/Table/Table';
 import { useModalContext } from '../hooks/useModalContext';
 
 const Employees = () => {

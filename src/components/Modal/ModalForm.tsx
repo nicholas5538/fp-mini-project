@@ -1,4 +1,4 @@
-import React, { MouseEvent, useRef, useEffect } from 'react';
+import React, { useRef, useEffect } from 'react';
 import { Form } from 'react-router-dom';
 import { modalEvent } from '../../constants/typeInterface';
 import useOutsideAlerter from '../../hooks/useOutsideAlerter';
@@ -11,7 +11,9 @@ const ModalForm = ({ path, setModalStatus }: modalEvent) => {
         idRef.current?.focus();
     }, []);
 
-    const clickHandler = (e: MouseEvent<HTMLButtonElement, MouseEvent>) => {
+    const clickHandler = (
+        e: React.MouseEvent<HTMLButtonElement, MouseEvent>
+    ) => {
         e.preventDefault();
         setModalStatus((prevStatus) => !prevStatus);
     };
@@ -117,14 +119,14 @@ const ModalForm = ({ path, setModalStatus }: modalEvent) => {
                         <button
                             type='submit'
                             className='button py-2 mr-4'
-                            onClick={() => clickHandler}
+                            onClick={clickHandler}
                         >
-                            Create
+                            Looks Good!
                         </button>
                         <button
                             type='button'
                             className='button py-2 bg-orange-red hover:bg-dark-red'
-                            onClick={() => clickHandler}
+                            onClick={clickHandler}
                         >
                             Cancel
                         </button>

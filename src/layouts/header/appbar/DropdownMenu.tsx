@@ -15,6 +15,7 @@ const DropdownMenu = ({ isDrop, clickDropdown, dropdownRef }: props) => {
             className='header-profile'
             onClick={clickDropdown}
             ref={dropdownRef}
+            data-testid='profile'
         >
             <Profile />
             <p className='font-semibold'>NICK</p>
@@ -25,6 +26,7 @@ const DropdownMenu = ({ isDrop, clickDropdown, dropdownRef }: props) => {
                         ? 'ease-out opacity-100 translate-y-0 pointer-events-auto'
                         : 'ease-in opacity-0 -translate-y-28 pointer-events-none'
                 }`}
+                data-testid='logout'
             >
                 <button className='route-link p-4 mx-auto'>
                     <Logout />
