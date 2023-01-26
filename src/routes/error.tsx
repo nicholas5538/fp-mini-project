@@ -15,17 +15,12 @@ const ErrorBoundary = () => {
                     <Player
                         autoplay
                         loop
-                        src={
-                            error.status === 404
-                                ? 'https://assets4.lottiefiles.com/packages/lf20_bhw1ul4g.json'
-                                : 'https://assets2.lottiefiles.com/temp/lf20_QYm9j9.json'
-                        }
+                        src='https://assets4.lottiefiles.com/packages/lf20_bhw1ul4g.json'
                         style={{ height: '15.625em', width: '15.625em' }}
                     >
                         <Controls visible={false} />
                     </Player>
                     <p className='lg:text-xl'>Something went wrong</p>
-                    {error.data?.message && <p>{error.data.message}</p>}
                     <Link to='/' className='button'>
                         Back to homepage
                     </Link>
