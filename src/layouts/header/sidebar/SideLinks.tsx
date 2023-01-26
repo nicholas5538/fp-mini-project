@@ -28,8 +28,8 @@ const SideLinks = () => {
             </li>
         ) : (
             <React.Fragment key={key}>
-                <li>
-                    <div className='route-link' onClick={clickDropdown}>
+                <li onClick={clickDropdown} data-testid={obj.text}>
+                    <div className='route-link'>
                         <obj.svgElement className='md:hidden lg:block' />
                         <span className='route-text'>{obj.text}</span>
                         <Arrow

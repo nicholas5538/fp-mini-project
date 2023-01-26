@@ -39,10 +39,6 @@
     td {
         @apply text-center;
     }
-
-    a {
-        @apply mr-4 text-base tracking-wider hover:text-blue hover:underline hover:underline-offset-8 hover:decoration-blue lg:tracking-widest;
-    }
 }
 
 @layer components {
@@ -104,5 +100,9 @@
 
     .footer-container {
         @apply flex flex-col items-start justify-between px-4 py-6 shadow-footer w-screen h-full md:flex-row md:items-center;
+    }
+
+    .footer-link {
+        @apply mr-4 text-base tracking-wider hover:text-blue hover:underline hover:underline-offset-8 hover:decoration-blue lg:tracking-widest;
     }
 }
