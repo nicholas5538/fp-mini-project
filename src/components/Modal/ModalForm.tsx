@@ -3,6 +3,7 @@ import { Form } from 'react-router-dom';
 import { modalEvent } from '../../constants/typeInterface';
 import useOutsideAlerter from '../../hooks/useOutsideAlerter';
 import useFocusInput from '../../hooks/useFocusInput';
+import { motion } from 'framer-motion';
 
 const ModalForm = ({ path, setModalStatus }: modalEvent) => {
     const modalRef = useRef<HTMLDivElement>(null);
@@ -20,9 +21,13 @@ const ModalForm = ({ path, setModalStatus }: modalEvent) => {
     return (
         <div className='absolute top-0 left-0 flex justify-center items-center w-full h-full'>
             <div className='bg-black opacity-50 h-full w-full'></div>
-            <div
+            <motion.div
                 ref={modalRef}
-                className='absolute p-4 mx-auto bg-white rounded-2xl shadow-xl max-w-lg w-5/6 ease-out transition duration-300'
+                className='absolute p-4 mx-auto bg-white rounded-2xl shadow-xl max-w-lg w-5/6'
+                initial={{ translateY: '-4rem' }}
+                animate={{ translateY: 0 }}
+                exit={{ translateY: '-4rem' }}
+                transition={{ duration: 0.25, ease: 'easeOut' }}
             >
                 <Form
                     method='post'
@@ -131,7 +136,7 @@ const ModalForm = ({ path, setModalStatus }: modalEvent) => {
                         </button>
                     </div>
                 </Form>
-            </div>
+            </motion.div>
         </div>
     );
 };
