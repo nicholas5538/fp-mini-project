@@ -16,7 +16,7 @@ const TableSearch = ({ path, query, onChange }: routing & inputType) => {
                 >
                     <span className='label-text'>
                         {path === 'departments'
-                            ? 'Search for any department'
+                            ? 'Search for any department:'
                             : 'Search for any employee:'}
                     </span>
                 </label>
