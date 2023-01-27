@@ -45,8 +45,8 @@ const ModalForm = ({ path, setModalStatus }: modalEvent) => {
                             className='text-blue text-xl font-semibold tracking-wider'
                         >
                             {path === 'departments'
-                                ? 'Department ID'
-                                : 'Employee ID'}
+                                ? 'Department ID:'
+                                : 'Employee ID:'}
                         </label>
                         <input
                             ref={idRef}
