@@ -1,4 +1,4 @@
-import { setup, screen } from '../../test-utils/testing-library-util';
+import { setup, screen, waitFor } from '../../test-utils/testing-library-util';
 
 describe('Test modal hidden and display status when button is clicked', () => {
     test('Modal is hidden when the cancel button is clicked', async () => {
@@ -8,7 +8,7 @@ describe('Test modal hidden and display status when button is clicked', () => {
         );
         const cancelButton = screen.getByRole('button', { name: /cancel/i });
         await user.click(cancelButton);
-        expect(cancelButton).not.toBeInTheDocument();
+        await waitFor(() => expect(cancelButton).not.toBeInTheDocument());
     });
 
     test('Modal is hidden when the create button is clicked', async () => {
@@ -20,7 +20,7 @@ describe('Test modal hidden and display status when button is clicked', () => {
             name: /looks good!/i,
         });
         await user.click(document.body);
-        expect(createButton).not.toBeInTheDocument();
+        await waitFor(() => expect(createButton).not.toBeInTheDocument());
     });
 
     test('Modal is hidden when the document body is clicked', async () => {
@@ -30,7 +30,7 @@ describe('Test modal hidden and display status when button is clicked', () => {
         );
         const cancelButton = screen.getByRole('button', { name: /cancel/i });
         await user.click(document.body);
-        expect(cancelButton).not.toBeInTheDocument();
+        await waitFor(() => expect(cancelButton).not.toBeInTheDocument());
     });
 });
 
