@@ -1,8 +1,12 @@
-import React from 'react';
+import React, { useRef } from 'react';
+import useFocusInput from '../../hooks/useFocusInput';
 import { inputType, routing } from '../../constants/typeInterface';
 import { Player, Controls } from '@lottiefiles/react-lottie-player';
 
 const TableSearch = ({ path, query, onChange }: routing & inputType) => {
+    const inputRef = useRef<HTMLInputElement>(null);
+    useFocusInput(inputRef);
+
     return (
         <div className='items-center md:flex md:flex-row md:justify-evenly lg:w-full lg:justify-between lg:mb-4'>
             <div className='grid grid-cols-4 mb-4 md:grid-cols-1 md:mb-0'>
@@ -21,6 +25,7 @@ const TableSearch = ({ path, query, onChange }: routing & inputType) => {
                     value={query}
                     className='input input-bordered w-full col-span-2 max-w-sm'
                     onChange={onChange}
+                    ref={inputRef}
                 />
             </div>
             <Player

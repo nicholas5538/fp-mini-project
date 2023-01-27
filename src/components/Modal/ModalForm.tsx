@@ -1,15 +1,14 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef } from 'react';
 import { Form } from 'react-router-dom';
 import { modalEvent } from '../../constants/typeInterface';
 import useOutsideAlerter from '../../hooks/useOutsideAlerter';
+import useFocusInput from '../../hooks/useFocusInput';
 
 const ModalForm = ({ path, setModalStatus }: modalEvent) => {
     const modalRef = useRef<HTMLDivElement>(null);
     const idRef = useRef<HTMLInputElement>(null);
     useOutsideAlerter(modalRef, setModalStatus);
-    useEffect(() => {
-        idRef.current?.focus();
-    }, []);
+    useFocusInput(idRef);
 
     const clickHandler = (
         e: React.MouseEvent<HTMLButtonElement, MouseEvent>
