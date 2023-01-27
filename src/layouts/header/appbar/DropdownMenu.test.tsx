@@ -1,15 +1,7 @@
-import { render, screen } from '../../../test-utils/testing-library-util';
-import userEvent from '@testing-library/user-event';
-import { createMemoryRouter } from 'react-router-dom';
-import { routesConfig } from '../../../routes/routesConfig';
+import { setup, screen } from '../../../test-utils/testing-library-util';
 
 test('Click profile icon to drop down logout menu', async () => {
-    const user = userEvent.setup();
-    const router = createMemoryRouter(routesConfig, {
-        initialEntries: ['/'],
-    });
-
-    render(router);
+    const { user } = setup('/');
 
     const logoutButton = screen.getByTestId('logout');
     expect(logoutButton).toHaveClass(

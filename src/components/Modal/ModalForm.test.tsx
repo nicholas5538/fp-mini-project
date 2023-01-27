@@ -1,16 +1,8 @@
-import { render, screen } from '../../test-utils/testing-library-util';
-import userEvent from '@testing-library/user-event';
-import { createMemoryRouter } from 'react-router-dom';
-import { routesConfig } from '../../routes/routesConfig';
+import { setup, screen } from '../../test-utils/testing-library-util';
 
 describe('Test modal hidden and display status when button is clicked', () => {
     test('Modal is hidden when the cancel button is clicked', async () => {
-        const user = userEvent.setup();
-        const router = createMemoryRouter(routesConfig, {
-            initialEntries: ['/departments'],
-        });
-
-        render(router);
+        const { user } = setup('/departments');
         await user.click(
             screen.getByRole('button', { name: /add departments/i })
         );
@@ -20,12 +12,7 @@ describe('Test modal hidden and display status when button is clicked', () => {
     });
 
     test('Modal is hidden when the create button is clicked', async () => {
-        const user = userEvent.setup();
-        const router = createMemoryRouter(routesConfig, {
-            initialEntries: ['/departments'],
-        });
-
-        render(router);
+        const { user } = setup('/departments');
         await user.click(
             screen.getByRole('button', { name: /add departments/i })
         );
@@ -37,12 +24,7 @@ describe('Test modal hidden and display status when button is clicked', () => {
     });
 
     test('Modal is hidden when the document body is clicked', async () => {
-        const user = userEvent.setup();
-        const router = createMemoryRouter(routesConfig, {
-            initialEntries: ['/departments'],
-        });
-
-        render(router);
+        const { user } = setup('/departments');
         await user.click(
             screen.getByRole('button', { name: /add departments/i })
         );

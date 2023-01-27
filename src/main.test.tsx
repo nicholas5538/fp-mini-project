@@ -1,16 +1,8 @@
-import { render, screen, waitFor } from './test-utils/testing-library-util';
-import userEvent from '@testing-library/user-event';
-import { createMemoryRouter } from 'react-router-dom';
-import { routesConfig } from './routes/routesConfig';
+import { setup, screen, waitFor } from './test-utils/testing-library-util';
 
 describe('full app navigation', () => {
     test('Click Departments link goes to /departments', async () => {
-        const user = userEvent.setup();
-        const router = createMemoryRouter(routesConfig, {
-            initialEntries: ['/'],
-        });
-
-        render(router);
+        const { user, router } = setup('/');
         await user.click(screen.getByTestId('Company'));
         await user.click(screen.getByRole('link', { name: /departments/i }));
         expect(router.state.location.pathname).toEqual('/departments');
@@ -22,12 +14,7 @@ describe('full app navigation', () => {
     });
 
     test('Click Employees link goes to /employees', async () => {
-        const user = userEvent.setup();
-        const router = createMemoryRouter(routesConfig, {
-            initialEntries: ['/departments'],
-        });
-
-        render(router);
+        const { user, router } = setup('/departments');
         await user.click(screen.getByTestId('Company'));
         await user.click(screen.getByRole('link', { name: /employees/i }));
         expect(router.state.location.pathname).toEqual('/employees');
@@ -39,46 +26,26 @@ describe('full app navigation', () => {
     });
 
     test('Click Locations link goes to /locations', async () => {
-        const user = userEvent.setup();
-        const router = createMemoryRouter(routesConfig, {
-            initialEntries: ['/departments'],
-        });
-
-        render(router);
+        const { user, router } = setup('/departments');
         await user.click(screen.getByTestId('Company'));
         await user.click(screen.getByRole('link', { name: /locations/i }));
         expect(router.state.location.pathname).toEqual('/locations');
     });
 
     test('Click Projects link goes to /projects', async () => {
-        const user = userEvent.setup();
-        const router = createMemoryRouter(routesConfig, {
-            initialEntries: ['/'],
-        });
-
-        render(router);
+        const { user, router } = setup('/locations');
         await user.click(screen.getByRole('link', { name: /projects/i }));
         expect(router.state.location.pathname).toEqual('/projects');
     });
 
     test('Click Settings link goes to /settings', async () => {
-        const user = userEvent.setup();
-        const router = createMemoryRouter(routesConfig, {
-            initialEntries: ['/projects'],
-        });
-
-        render(router);
+        const { user, router } = setup('/projects');
         await user.click(screen.getByRole('link', { name: /settings/i }));
         expect(router.state.location.pathname).toEqual('/settings');
     });
 
     test('Click Dashboard link goes back to /', async () => {
-        const user = userEvent.setup();
-        const router = createMemoryRouter(routesConfig, {
-            initialEntries: ['/settings'],
-        });
-
-        render(router);
+        const { user, router } = setup('/settings');
         await user.click(screen.getByRole('link', { name: /dashboard/i }));
         expect(router.state.location.pathname).toEqual('/');
         expect(
@@ -89,12 +56,7 @@ describe('full app navigation', () => {
     });
 
     test('Landing on an invalid page and navigate back to /', async () => {
-        const user = userEvent.setup();
-        const router = createMemoryRouter(routesConfig, {
-            initialEntries: ['/some/bad/route'],
-        });
-
-        render(router);
+        const { user } = setup('/some/bad/route');
         const homeButton = screen.getByRole('link', {
             name: /back to homepage/i,
         });
