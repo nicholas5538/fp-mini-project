@@ -10,7 +10,10 @@ const TableSearch = ({ path, query, onChange }: routing & inputType) => {
     return (
         <div className='items-center md:flex md:flex-row md:justify-evenly lg:w-full lg:justify-between lg:mb-4'>
             <div className='grid grid-cols-4 mb-4 md:grid-cols-1 md:mb-0'>
-                <label className='label col-span-2 md:col-span-1'>
+                <label
+                    htmlFor={path}
+                    className='label col-span-2 md:col-span-1'
+                >
                     <span className='label-text'>
                         {path === 'departments'
                             ? 'Search for any department'
@@ -18,10 +21,9 @@ const TableSearch = ({ path, query, onChange }: routing & inputType) => {
                     </span>
                 </label>
                 <input
+                    id={path}
                     type='text'
-                    placeholder={`Any details of ${
-                        path === 'departments' ? 'departments' : 'employees'
-                    }`}
+                    placeholder={`Any details of ${path}`}
                     value={query}
                     className='input input-bordered w-full col-span-2 max-w-sm'
                     onChange={onChange}
