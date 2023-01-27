@@ -1,13 +1,16 @@
-import React from 'react';
+import React, { useDeferredValue, useState } from 'react';
 import Main from '../layouts/Main';
 import TableSearch from '../components/Table/TableSearch';
 import Modal from '../components/Modal/Modal';
-import { DepartmentTable } from '../components/Table/Table';
+import Table from '../components/Table/Table';
 import { useModalContext } from '../hooks/useModalContext';
 
 const Departments = () => {
+    const [deptQuery, setDeptQuery] = useState<string>('');
     const { modalClicked, setModalStatus, modalEventHandler } =
         useModalContext();
+    const deferredQuery = useDeferredValue(deptQuery);
+
     const modalProps = { path: 'departments', modalClicked, setModalStatus };
 
     return (
@@ -28,8 +31,14 @@ const Departments = () => {
                         Add Departments
                     </button>
                 </div>
-                <TableSearch path={modalProps.path} />
-                <DepartmentTable />
+                <TableSearch
+                    path={modalProps.path}
+                    query={deptQuery}
+                    onChange={(e: React.FormEvent<HTMLInputElement>) =>
+                        setDeptQuery(e.currentTarget.value)
+                    }
+                />
+                <Table path={modalProps.path} query={deferredQuery} />
             </Main>
             <Modal {...modalProps} />
         </>

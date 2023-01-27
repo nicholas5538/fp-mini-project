@@ -1,7 +1,8 @@
 import React from 'react';
+import { inputType, routing } from '../../constants/typeInterface';
 import { Player, Controls } from '@lottiefiles/react-lottie-player';
 
-const TableSearch = ({ path }: { path: string }) => {
+const TableSearch = ({ path, query, onChange }: routing & inputType) => {
     return (
         <div className='items-center md:flex md:flex-row md:justify-evenly lg:w-full lg:justify-between lg:mb-4'>
             <div className='grid grid-cols-4 mb-4 md:grid-cols-1 md:mb-0'>
@@ -14,12 +15,12 @@ const TableSearch = ({ path }: { path: string }) => {
                 </label>
                 <input
                     type='text'
-                    placeholder={
-                        path === 'departments'
-                            ? 'Name of department'
-                            : 'Name of employee'
-                    }
+                    placeholder={`Any details of ${
+                        path === 'departments' ? 'departments' : 'employees'
+                    }`}
+                    value={query}
                     className='input input-bordered w-full col-span-2 max-w-sm'
+                    onChange={onChange}
                 />
             </div>
             <Player

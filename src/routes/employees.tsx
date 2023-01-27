@@ -1,13 +1,16 @@
-import React from 'react';
+import React, { useDeferredValue, useState } from 'react';
 import Main from '../layouts/Main';
 import TableSearch from '../components/Table/TableSearch';
 import Modal from '../components/Modal/Modal';
-import { EmployeeTable } from '../components/Table/Table';
+import Table from '../components/Table/Table';
 import { useModalContext } from '../hooks/useModalContext';
 
 const Employees = () => {
+    const [emplQuery, setEmplQuery] = useState<string>('');
     const { modalClicked, setModalStatus, modalEventHandler } =
         useModalContext();
+    const deferredQuery = useDeferredValue(emplQuery);
+
     const modalProps = { path: 'employees', modalClicked, setModalStatus };
 
     return (
@@ -28,8 +31,14 @@ const Employees = () => {
                         Add Employees
                     </button>
                 </div>
-                <TableSearch path={modalProps.path} />
-                <EmployeeTable />
+                <TableSearch
+                    path={modalProps.path}
+                    query={emplQuery}
+                    onChange={(e: React.FormEvent<HTMLInputElement>) =>
+                        setEmplQuery(e.currentTarget.value)
+                    }
+                />
+                <Table path={modalProps.path} query={deferredQuery} />
             </Main>
             <Modal {...modalProps} />
         </>
