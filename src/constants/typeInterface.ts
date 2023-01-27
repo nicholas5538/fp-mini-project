@@ -17,3 +17,17 @@ export type routing = {
 export type modalEvent = routing & setModalStatus;
 
 export type modalProps = modalEvent & modalState;
+
+type formEventType = {
+    onChange: (e: React.FormEvent<HTMLInputElement>) => void;
+};
+
+export type queryType = {
+    query: string;
+};
+
+export type inputType = queryType & formEventType;
+
+export interface Itable {
+    [props: string]: string;
+}
