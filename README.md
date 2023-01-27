@@ -62,4 +62,3 @@ In addition to the `dev` command, there are other scripts available in the packa
 -   [React TypeScript Cheatsheet](https://react-typescript-cheatsheet.netlify.app/docs/basic/setup)
 -   [Tailwindcss styling](https://tailwindcss.com/docs/installation)
 -   [Framer Motion](https://www.framer.com/motion/)
--   [headlessui](https://headlessui.com)
