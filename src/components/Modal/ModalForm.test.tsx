@@ -33,3 +33,9 @@ describe('Test modal hidden and display status when button is clicked', () => {
         expect(cancelButton).not.toBeInTheDocument();
     });
 });
+
+test("Modal form's ID input is focused upon rendering", async () => {
+    const { user } = setup('/departments');
+    await user.click(screen.getByRole('button', { name: /add departments/i }));
+    expect(screen.getByRole('spinbutton')).toHaveFocus();
+});
