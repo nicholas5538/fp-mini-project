@@ -1,14 +1,7 @@
-import { render, screen } from '../../test-utils/testing-library-util';
-import { createMemoryRouter } from 'react-router-dom';
-import { routesConfig } from '../../routes/routesConfig';
+import { setup, screen } from '../../test-utils/testing-library-util';
 
 test('Table Actions row should render both update and delete svgs', () => {
-    const router = createMemoryRouter(routesConfig, {
-        initialEntries: ['/departments'],
-    });
-
-    render(router);
-
+    setup('/departments');
     const actionColumn = screen.getByTestId('action-column 1');
     const actionIcons = screen.getByTestId('action-icons 1');
     const updateIcon = screen.getAllByTestId('update-icon');

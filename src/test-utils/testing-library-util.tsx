@@ -1,10 +1,20 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import { RouterProvider, RouterProviderProps } from 'react-router-dom';
+import userEvent from '@testing-library/user-event';
+import { createMemoryRouter, RouterProvider } from 'react-router-dom';
+import { routesConfig } from '../routes/routesConfig';
 
-const renderWithRouterProvider = (router: RouterProviderProps['router']) => {
-    return render(<RouterProvider router={router} />);
+export const renderWithRouterProvider = (initialEntries: string) => {
+    const router = createMemoryRouter(routesConfig, {
+        initialEntries: [initialEntries],
+    });
+
+    return {
+        user: userEvent.setup(),
+        router: router,
+        ...render(<RouterProvider router={router} />),
+    };
 };
 
 export * from '@testing-library/react';
-export { renderWithRouterProvider as render };
+export { renderWithRouterProvider as setup };
