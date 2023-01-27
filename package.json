@@ -3,14 +3,18 @@
     "private": true,
     "version": "0.0.0",
     "type": "module",
+    "engines": {
+        "node": "19.3.0"
+    },
     "scripts": {
-        "dev": "vite",
         "build": "tsc && vite build",
-        "preview": "vite preview",
+        "coverage": "vitest run --coverage",
+        "dev": "vite",
         "format": "prettier --check --ignore-path .gitignore .",
         "format:fix": "prettier --write --ignore-path .gitignore .",
-        "test": "vitest",
-        "coverage": "vitest run --coverage"
+        "lint": "npx eslint . --ext .js,.jsx,.ts,.tsx --cache",
+        "preview": "vite preview",
+        "test": "vitest"
     },
     "dependencies": {
         "@headlessui/react": "^1.7.7",
