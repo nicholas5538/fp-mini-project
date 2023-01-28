@@ -1,5 +1,6 @@
 # React mini-project
 
+[![codecov](https://codecov.io/gh/nicholas5538/fp-mini-project/branch/main/graph/badge.svg?token=SPALKMOKIF)](https://codecov.io/gh/nicholas5538/fp-mini-project)
 [![Node Version](https://img.shields.io/badge/Node-19.3.0-brightgreen.svg)](https://github.com/nicholas5538/fp-mini-project/blob/main/package.json#L7)
 ![Mac OS](https://img.shields.io/badge/DevelopedOn-MacOS-red.svg)
 
