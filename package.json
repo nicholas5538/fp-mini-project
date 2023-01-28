@@ -8,13 +8,13 @@
     },
     "scripts": {
         "build": "tsc && vite build",
-        "coverage": "vitest run --coverage",
         "dev": "vite",
         "format": "prettier --check --ignore-path .gitignore .",
         "format:fix": "prettier --write --ignore-path .gitignore .",
         "lint": "npx eslint . --ext .js,.jsx,.ts,.tsx --cache",
         "preview": "vite preview",
-        "test": "vitest"
+        "test": "vitest",
+        "test:cov": "vitest run --coverage"
     },
     "dependencies": {
         "@lottiefiles/react-lottie-player": "^3.5.0",

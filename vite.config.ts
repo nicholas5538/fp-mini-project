@@ -24,12 +24,7 @@ export default defineConfig({
         },
         coverage: {
             reporter: ['text', 'json', 'html'],
-            exclude: [
-                ...configDefaults.coverage.exclude,
-                'src/setupTests.ts',
-                'src/test-utils',
-                'src/constants',
-            ],
+            exclude: ['src/setupTests.ts', 'src/test-utils', 'src/constants'],
         },
     },
 });
