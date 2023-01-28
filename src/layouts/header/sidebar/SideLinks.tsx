@@ -39,7 +39,7 @@ const SideLinks = () => {
                         />
                     </div>
                 </li>
-                <DropdownItems isHidden={isHidden} />
+                {!isHidden && <DropdownItems />}
             </React.Fragment>
         );
     });
