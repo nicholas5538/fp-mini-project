@@ -13,8 +13,8 @@ export const routesConfig = createRoutesFromElements(
             <Route index element={<Dashboard />} />
             <Route path='departments' element={<Departments />} />
             <Route path='employees' element={<Employees />} />
-            <Route path='locations' element={<Dashboard />} />
-            <Route path='projects' element={<Dashboard />} />
+            <Route path='locations' element={<ErrorBoundary />} />
+            <Route path='projects' element={<ErrorBoundary />} />
             <Route path='settings' element={<ErrorBoundary />} />
         </Route>
     </Route>
